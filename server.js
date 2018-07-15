@@ -57,6 +57,7 @@ http.createServer(function (request, response){ //Returns a new instance of http
 				response.end();
 			 }
 		});
+		 response.end("<h1>FS READ FILE ERROR: Internal Server Error!</h1>");
     }	
 }).listen(port, server_ip_address);// Server port
 // console.log("Server démarré sur le port :" + PORT + "du localhost");
