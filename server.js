@@ -18,11 +18,12 @@ var MIMETYPES = {
 		js: "text/javascript",
 		css: "text/css",
 		ico : "image/x-icon"
-	},
-	PORT = 8080;
+	};
 
-	var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+
+
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+    server_ip_address   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 http.createServer(function (request, response){ //Returns a new instance of http.Server.
    // console.log("request well recieved",request.url);
@@ -57,6 +58,6 @@ http.createServer(function (request, response){ //Returns a new instance of http
 			 }
 		});
     }	
-}).listen(server_port, server_ip_address);// Server port
+}).listen(port, server_ip_address);// Server port
 // console.log("Server démarré sur le port :" + PORT + "du localhost");
 
