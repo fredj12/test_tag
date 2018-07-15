@@ -1,4 +1,14 @@
-"scripts": {
-  "start": "node server.js"
-},
-"main": "server.js"
+{
+  "name": "test_tag",
+  "version": "0.0.1",
+  "description": "Node.js server",
+  "main": "server.js",
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Frédéric Jonkers"
+}
