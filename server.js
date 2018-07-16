@@ -6,7 +6,8 @@ var http = require("http"),   //http node module
 	fs = require("fs"),       //file system
 	path = require('path'),
 	url = require('url');
-    
+	
+console.log("step 1");    
     
 //Object "MIMETYPES"
 var MIMETYPES = {
@@ -20,10 +21,13 @@ var MIMETYPES = {
 		ico : "image/x-icon"
 	};
 
-
+console.log("step 2");   
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     server_ip_address   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+	
+console.log("Port : " + port);   
+console.log("server_ip_address : " + server_ip_address);
 
 http.createServer(function (request, response){ //Returns a new instance of http.Server.
    console.log("request well recieved",request.url);
