@@ -24,7 +24,7 @@ var MIMETYPES = {
 console.log("step 2");   
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
-    server_ip_address   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+    server_ip_address   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0';
 	
 console.log("Port : " + port);   
 console.log("server_ip_address : " + server_ip_address);
