@@ -1,6 +1,6 @@
 
 
-// console.log("Démarage du server");
+console.log("Démarage du server");
 //Module requires
 var http = require("http"),   //http node module
 	fs = require("fs"),       //file system
@@ -26,7 +26,7 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     server_ip_address   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 
 http.createServer(function (request, response){ //Returns a new instance of http.Server.
-   // console.log("request well recieved",request.url);
+   console.log("request well recieved",request.url);
 	var listener = function (error, contentType){
 	    if(error){
           // console.log('DIE!', error);
@@ -44,7 +44,7 @@ http.createServer(function (request, response){ //Returns a new instance of http
     
     
     if( MIMETYPES.hasOwnProperty(filenameExtension) ){
-    	// console.log("MIMETYPES::: ",MIMETYPES[filenameExtension]);
+    	console.log("MIMETYPES::: ",MIMETYPES[filenameExtension]);
         fs.readFile("." + request.url, function (error, fileContent){
 			 if (!error){
         	// listener(error,MIMETYPES[filenameExtension]);
@@ -57,7 +57,6 @@ http.createServer(function (request, response){ //Returns a new instance of http
 				response.end();
 			 }
 		});
-		 response.end("<h1>FS READ FILE ERROR: Internal Server Error!</h1>");
     }	
 }).listen(port, server_ip_address);// Server port
 // console.log("Server démarré sur le port :" + PORT + "du localhost");
